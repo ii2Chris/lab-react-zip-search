@@ -5,11 +5,11 @@ import "./App.css";
 
 function City({ cityData }) {
   return (
-    <div>
-      <div>
+    <div className="city">
+      <div className="city-header">
         <p>{cityData.LocationText}</p>
       </div>
-      <div>
+      <div className="city-body">
         <ul>
           <li>State: {cityData.State}</li>
           <li>
@@ -43,10 +43,11 @@ function ZipSearchField() {
   }, [zipCode]);
 
   return (
-    <div>
+    <div className="zipcode">
       <form>
         <input
           type="text"
+          className="form-control"
           value={zipCode}
           onChange={handleInputChange}
           placeholder="Enter zip code"
@@ -66,7 +67,7 @@ function App() {
         <h1>Zip Code Search</h1>
       </div>
       <div className="mx-auto" style={{ maxWidth: 400 }}>
-        <p>Zip Code: </p>
+        <p className="zip-code-label">Zip Code: </p>
         <ZipSearchField />
       </div>
     </div>
